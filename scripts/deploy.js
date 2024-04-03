@@ -1,17 +1,17 @@
 // scripts/deploy.js
 async function main() {
     // 1. Get the contract to deploy
-    const Your_Contract = await ethers.getContractFactory('Lock');
-    console.log('Deploying Your_Contract...');
+    const USDT = await ethers.getContractFactory('USDT');
+    console.log('Deploying contract...');
  
     // 2. Instantiating a new smart contract
-    const your_contract = await Your_Contract.deploy(100000000000000000n);
+    const usdt = await USDT.deploy();
  
     // 3. Waiting for the deployment to resolve
-    await your_contract.deployed();
+    await usdt.deployed();
  
     // 4. Use the contract instance to get the contract address
-    console.log('Your_Contract deployed to:', your_contract.address);
+    console.log('USDT deployed to:', usdt.address);
  }
  
  main()

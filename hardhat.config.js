@@ -1,23 +1,18 @@
 //hardhat.config.js
-
 require('@nomiclabs/hardhat-ethers');
-const dotenv = require("dotenv");
-
-dotenv.config();
-const privateKey = process.env.privateKey;
-console.log('-----------------------', privateKey)
+const { privateKey } = require('./config');
 
 module.exports = {
-  solidity: "0.8.1",
+  solidity: "0.8.20",
   networks: {
     inEVM: {
-      url: "https://inevm.calderachain.xyz/http",
+      url: "https://mainnet.rpc.inevm.com/http",
       chainId: 2525,
       accounts: [privateKey]
     },
     inEVMtest: {
-      url: "https://inevm-rpc.caldera.dev",
-      chainId: 1738,
+      url: "https://testnet.rpc.inevm.com/http",
+      chainId: 2424,
       accounts: [privateKey]
     }
   },
